@@ -27,11 +27,11 @@ def user_input_features():
 
     data = {
         'LOCATION': location_encoded,
-        'BEDROOM': bedrooms,
-        'BATHROOM': bathrooms,
-        'TOILET': toilets,
-        'PARKING SPACE': parking_space,
-        'YEAR ADDED': year_added
+        'BEDROOMS': bedrooms,
+        'BATHROOMS': bathrooms,
+        'TOILETS': toilets,
+#        'PARKING SPACE': parking_space,
+#        'YEAR ADDED': year_added
     }
     return pd.DataFrame([data])
 
