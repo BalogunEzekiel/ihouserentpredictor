@@ -37,5 +37,18 @@ st.subheader("Property Summary")
 st.write(input_df)
 
 if st.button("Predict Rent Price"):
-    prediction = model.predict(input_df)
+    model = joblib.load('house_rent_model.pkl')
+
+# Input DataFrame
+input_df = pd.DataFrame({
+    'LOCATION': [location],
+    'BEDROOMS': [bedrooms],
+    'BATHROOMS': [bathrooms],
+    'TOILETS': [toilets],
+    'HOUSE_TYPE': [house_type]
+})
+
+# Predict using the entire pipeline
+    prediction = model.predict(input_df)[0]
+#    prediction = model.predict(input_df)
     st.success(f"Estimated Rent: ₦{int(prediction[0]):,}")
