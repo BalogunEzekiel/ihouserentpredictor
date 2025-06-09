@@ -30,7 +30,7 @@ def user_input_features():
         'BEDROOMS': bedrooms,
         'BATHROOMS': bathrooms,
         'TOILETS': toilets,
-#        'PARKING SPACE': parking_space,
+        'PARKING SPACE': parking_space,
 #        'YEAR ADDED': year_added
     }
     return pd.DataFrame([data])
