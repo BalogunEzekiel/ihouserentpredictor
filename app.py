@@ -2,13 +2,17 @@ import streamlit as st
 import pandas as pd
 import joblib
 
+# Page config
 st.set_page_config(page_title="Lagos Rent Predictor", layout="centered")
 
+# Load model
 model = joblib.load("best_lgbm_model.pkl")
 
+# Title
 st.title("🏠 Lagos House Rent Prediction App")
 st.markdown("Use this tool to predict house rent prices in Lagos based on property features.")
 
+# Sidebar inputs
 st.sidebar.header("Enter Property Details")
 
 def user_input_features():
@@ -31,24 +35,14 @@ def user_input_features():
     }
     return pd.DataFrame([data])
 
+# Get user input
 input_df = user_input_features()
 
+# Show summary
 st.subheader("Property Summary")
 st.write(input_df)
 
+# Prediction
 if st.button("Predict Rent Price"):
-    model = joblib.load('best_lgbm_model.pkl')
-
-# Input DataFrame
-input_df = pd.DataFrame({
-    'LOCATION': [location],
-    'BEDROOMS': [bedrooms],
-    'BATHROOMS': [bathrooms],
-    'TOILETS': [toilets],
-    'HOUSE_TYPE': [house_type]
-})
-
-# Predict using the entire pipeline
-prediction = model.predict(input_df)[0]
-
-st.success(f"Estimated Rent: ₦{int(prediction[0]):,}")
+    prediction = model.predict(input_df)[0]
+    st.success(f"Estimated Rent: ₦{int(prediction):,}")
