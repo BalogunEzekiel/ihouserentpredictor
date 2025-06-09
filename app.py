@@ -49,6 +49,6 @@ input_df = pd.DataFrame({
 })
 
 # Predict using the entire pipeline
-    prediction = model.predict(input_df)[0]
+prediction = model.predict(input_df)[0]
 #    prediction = model.predict(input_df)
     st.success(f"Estimated Rent: ₦{int(prediction[0]):,}")
