@@ -44,5 +44,6 @@ st.write(input_df)
 
 # Prediction
 if st.button("Predict Rent Price"):
+    st.write("Input features:", input_df.columns.tolist())
     prediction = model.predict(input_df)[0]
     st.success(f"Estimated Rent: ₦{int(prediction):,}")
