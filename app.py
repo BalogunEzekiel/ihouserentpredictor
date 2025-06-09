@@ -17,15 +17,12 @@ st.sidebar.header("Enter Property Details")
 
 def user_input_features():
     location = st.sidebar.selectbox("Location", ['Ikeja', 'Lekki', 'Yaba', 'Surulere', 'Ajah', 'Other'])
+    lga = st.sidebar.selectbox("LGA", ['Ikeja', 'Eti-Osa', 'Yaba', 'Surulere', 'Ajah', 'Other'])
     bedrooms = st.sidebar.slider("Number of Bedrooms", 1, 6, 3)
     bathrooms = st.sidebar.slider("Number of Bathrooms", 1, 5, 2)
     toilets = st.sidebar.slider("Number of Toilets", 1, 5, 2)
-    parking_space = st.sidebar.selectbox("Parking Space", [0, 1])
-    year_added = st.sidebar.slider("Year Added", 2019, 2025, 2023)
-    
-    # Missing variables added here
     house_type = st.sidebar.selectbox("House Type", ['Flat', 'Self-Contain', 'Duplex', 'Bungalow', 'Mini Flat', 'Other'])
-    lga = st.sidebar.selectbox("LGA", ['Ikeja', 'Eti-Osa', 'Yaba', 'Surulere', 'Ajah', 'Other'])
+    year_added = st.sidebar.slider("Year Added", 2019, 2025, 2023)
     month_added = st.sidebar.slider("Month Added", 1, 12, 6)
     day_added = st.sidebar.slider("Day Added", 1, 31, 15)
 
