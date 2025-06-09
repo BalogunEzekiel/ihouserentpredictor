@@ -37,7 +37,7 @@ st.subheader("Property Summary")
 st.write(input_df)
 
 if st.button("Predict Rent Price"):
-    model = joblib.load('house_rent_model.pkl')
+    model = joblib.load('best_lgbm_model.pkl')
 
 # Input DataFrame
 input_df = pd.DataFrame({
